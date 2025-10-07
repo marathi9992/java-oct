@@ -3,7 +3,6 @@ Question 1. Write a java program that implements a multi-thread application that
 First thread generates random integer number after every one second, if the number is even; 
 second thread computes the square of that number and print it. If the number is odd, the third 
 thread computes the of cube of that number and print it.
-package Slip;
 import java.util.Random;
 class Slip7 implements Runnable {
     public void run() {
@@ -21,7 +20,9 @@ class Slip7 implements Runnable {
             } catch (Exception e) {
                 System.out.println(e);
             }}}
-    
+
 public static void main(String[] args) {
     Thread t1 = new Thread(new Slip7());
     t1.start();   } }
+
+
