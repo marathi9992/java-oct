@@ -1,0 +1,29 @@
+Slip No 11
+Write a Java program to display information about all columns in the DONAR table using ResultSetMetaData 
+import java.sql.*;	class DonarMetaData {
+    public static void main(String[] args) {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection(
+                "jdbc:mysql://localhost:5432/testdb", "mahesh", "mahesh");
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery("SELECT * FROM DONAR");
+            ResultSetMetaData md = rs.getMetaData();
+            int n = md.getColumnCount();
+            System.out.println("DONAR Table Column Information:\n");
+            for (int i = 1; i <= n; i++) {
+                System.out.println("Column " + i + ": " + md.getColumnName(i));
+                System.out.println("Type: " + md.getColumnTypeName(i));
+                System.out.println("Size: " + md.getColumnDisplaySize(i));
+                System.out.println("-----------------------------");  }
+            con.close();
+        }  catch (Exception e) {
+            System.out.println(e);
+        } } }
+Mysql : 1)sudo -u postgres pgsql
+2)Create database db; 3)\c db;
+4) create user ‘mahesh’ with password ‘mahesh123’;
+5)grant all privileges on database db to mahesh;
+6)create table users(uid int primary key, uname varchar(20),address(20));
+7)grant all privileges on table users to mahesh;
+8) Select * from users; 9) insert into values into users values(1,’mahesh’,’shirdi’); 
