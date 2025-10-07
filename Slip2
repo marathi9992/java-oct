@@ -1,0 +1,19 @@
+Slip No.2
+Queastion  1 Write a java program to read ‘N’ names of your friends, store it into HashSet and display them in ascending order.
+import java.util.*;
+class FriendsNames {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        HashSet<String> names = new HashSet<>();
+        System.out.print("How many friends? ");
+        int n = sc.nextInt();
+        sc.nextLine(); // to clear newline
+        for (int i = 1; i <= n; i++) {
+            System.out.print("Enter name " + i + ": ");
+            names.add(sc.nextLine());
+        }
+        TreeSet<String> sorted = new TreeSet<>(names);
+        System.out.println("\nNames in ascending order:");
+        for (String name : sorted) {
+            System.out.println(name);
+        }  sc.close(); } }
