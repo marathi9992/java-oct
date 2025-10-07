@@ -1,0 +1,15 @@
+Slip no. 8 Write a java program to define a thread for printing text on output screen for ‘n’ number of times. Create 3 threads and run them. Pass the text ‘n’ parameters to the thread constructor.
+class MyThread extends Thread {
+    String text;  int n;
+    MyThread(String t, int num) {
+        text = t;
+        n = num; }
+    public void run() {
+        for (int i = 1; i <= n; i++) {
+            System.out.println(text);  } } }
+public class SimpleThreadDemo {
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread("COVID19", 10);
+        MyThread t2 = new MyThread("LOCKDOWN2020", 20);
+       MyThread t3 = new MyThread("VACCINATED2021", 30);
+        t1.start();    t2.start();   t3.start();  } }
